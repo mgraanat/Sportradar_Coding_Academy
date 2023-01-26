@@ -67,4 +67,14 @@ public class Event {
                 ", probabilityAwayTeamWinner=" + probabilityAwayTeamWinner +
                 '}';
     }
+
+    public double getHighestProbableValue() {
+        if (probabilityHomeTeamWinner > probabilityDraw && probabilityHomeTeamWinner > probabilityAwayTeamWinner) {
+            return probabilityHomeTeamWinner;
+        } else if (probabilityDraw > probabilityHomeTeamWinner && probabilityDraw > probabilityAwayTeamWinner) {
+            return probabilityDraw;
+        } else {
+            return probabilityAwayTeamWinner;
+        }
+    }
 }
